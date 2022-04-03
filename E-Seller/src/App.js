@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Home } from "./Components/Home";
 import {Signup} from "./Components/signup/Signup";
+import {Register} from "./Components/signup/Registrartion"
 function App() {
   return (
     <div className="App">
@@ -14,7 +15,8 @@ function App() {
           </Route>
         </Routes>
       </Router> */}
-      <Signup/>
+      {/* <Signup/> */}
+      <Register/>
     </div>
   );
 }

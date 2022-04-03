@@ -2,7 +2,8 @@ import React from "react";
 import image1 from "../../Assets/image1.png";
 import logo1 from "../../Assets/seller_icon_round.png";
 import styles from "./Signup.module.css";
-export const Signup = () => {
+import { Link } from "react-router-dom";
+export const Register = () => {
   return (
     <div className={"px-4 py-5 mx-auto container " + styles.container}>
       <div className={styles.card + " " + styles.card0}>
@@ -29,6 +30,18 @@ export const Signup = () => {
                   />{" "}
                 </div>
                 <div className="form-group">
+                  <label className={"text-muted " + styles.formControlLabel}>
+                    Email
+                  </label>
+                  <input
+                    type="text"
+                    id="Email"
+                    name="email"
+                    placeholder="Email"
+                    className="form-control"
+                  />{" "}
+                </div>
+                <div className="form-group">
                   {" "}
                   <label className={"text-muted " + styles.formControlLabel}>
                     Password
@@ -41,28 +54,40 @@ export const Signup = () => {
                     className="form-control"
                   />{" "}
                 </div>
+                <div className="form-group">
+                  <label className={"text-muted " + styles.formControlLabel}>
+                    Re-enter Password
+                  </label>
+                  <input
+                    id="Re-enter Password"
+                    name="rePassword"
+                    placeholder="Re-enter Password"
+                    className="form-control"
+                    type="password"
+                  />{" "}
+                </div>{" "}
+                <br />
                 <div className="row justify-content-center my-3 px-3">
                   {" "}
                   <button className={"btn-block " + styles.btnColor}>
-                    Login to E-Seller as Buyer
+                    Singup to E-Seller as Buyer
                   </button>{" "}
                 </div>
                 <p href="#" className={"mx-auto mb-3 " + styles.loginRedirect}>
-                  click here to login as Seller
+                  click here to signup as Seller
                   {/* <span>{role === "buyer" ? "seller" : "buyer"}</span> */}
                 </p>
+                <div className="row justify-content-center my-2">
+                  {" "}
+                  {/* <Link to="/login"> */}
+                    <small className="text-muted">
+                      Redirect back to Login Page
+                    </small>
+                  {/* </Link>{" "} */}
+                </div>
               </div>
             </div>
-            <div className={"text-center mb-5 " + styles.bottom}>
-              <p href="#" className={"mx-auto mb-3 " + styles.smText}>
-                Don't have an account?
-              </p>
-              <button className={"btn ml-2 " + styles.btnWhite}>
-                {/* <Link to="/registration"> */}
-                Create new
-                {/* </Link>  */}
-              </button>
-            </div>
+           
           </div>
           <div className={styles.card + " " + styles.card2}>
             <div className={"my-auto mx-md-5 px-md-5 right" + styles.right}>
