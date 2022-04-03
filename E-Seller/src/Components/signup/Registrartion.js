@@ -80,14 +80,13 @@ export const Register = () => {
                 <div className="row justify-content-center my-2">
                   {" "}
                   {/* <Link to="/login"> */}
-                    <small className="text-muted">
-                      Redirect back to Login Page
-                    </small>
+                  <small className="text-muted">
+                    Redirect back to Login Page
+                  </small>
                   {/* </Link>{" "} */}
                 </div>
               </div>
             </div>
-           
           </div>
           <div className={styles.card + " " + styles.card2}>
             <div className={"my-auto mx-md-5 px-md-5 right" + styles.right}>
