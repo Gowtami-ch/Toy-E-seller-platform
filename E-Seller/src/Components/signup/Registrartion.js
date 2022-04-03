@@ -70,20 +70,20 @@ export const Register = () => {
                 <div className="row justify-content-center my-3 px-3">
                   {" "}
                   <button className={"btn-block " + styles.btnColor}>
-                    Singup to E-Seller as Buyer
+                    Sign up to E-Seller as Buyer
                   </button>{" "}
                 </div>
                 <p href="#" className={"mx-auto mb-3 " + styles.loginRedirect}>
-                  click here to signup as Seller
+                  click here to sign up as Seller
                   {/* <span>{role === "buyer" ? "seller" : "buyer"}</span> */}
                 </p>
                 <div className="row justify-content-center my-2">
                   {" "}
-                  {/* <Link to="/login"> */}
+                  <Link to="/login">
                   <small className="text-muted">
                     Redirect back to Login Page
                   </small>
-                  {/* </Link>{" "} */}
+                  </Link>{" "}
                 </div>
               </div>
             </div>

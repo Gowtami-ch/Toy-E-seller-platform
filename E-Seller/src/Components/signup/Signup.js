@@ -2,6 +2,7 @@ import React from "react";
 import image1 from "../../Assets/image1.png";
 import logo1 from "../../Assets/seller_icon_round.png";
 import styles from "./Signup.module.css";
+import { Link } from "react-router-dom";
 export const Signup = () => {
   return (
     <div className={"px-4 py-5 mx-auto container " + styles.container}>
@@ -58,9 +59,9 @@ export const Signup = () => {
                 Don't have an account?
               </p>
               <button className={"btn ml-2 " + styles.btnWhite}>
-                {/* <Link to="/registration"> */}
+                <Link to="/register" style={{ textDecoration: 'none' }}>
                 Create new
-                {/* </Link>  */}
+                </Link> 
               </button>
             </div>
           </div>
