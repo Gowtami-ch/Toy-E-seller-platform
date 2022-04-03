@@ -5,6 +5,7 @@ import {Signup} from "./Components/signup/Signup";
 import {Register} from "./Components/signup/Registrartion"
 import Sellers from "./Components/sellersHome/Sellers"
 import Sellnewproduct from "./Components/sellersHome/Sellnewproduct"
+import Buyers from "./Components/BuyersHome/Buyers"
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,9 @@ function App() {
           </Route>
            <Route exact path="/sellnewproduct">
             <Sellnewproduct />
+          </Route>
+          <Route exact path="/">
+            <Buyers />
           </Route>
         </Switch>
         </Router>
