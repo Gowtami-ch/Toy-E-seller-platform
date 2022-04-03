@@ -47,7 +47,7 @@ export const Sellershome = () => {
           </section>
           <section className={`${styles.mdbCustom}`}>
             <Card
-              path="./sellnewproduct"
+              path="/sellnewproduct"
               imgSrc="https://productmanagementfestival.com/wp-content/uploads/2017/01/sell-your-product-online.jpg"
               alt={"..."}
               cardName={`Sell new product`}

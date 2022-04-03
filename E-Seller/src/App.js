@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {Signup} from "./Components/signup/Signup";
 import {Register} from "./Components/signup/Registrartion"
 import Sellers from "./Components/sellersHome/Sellers"
+import Sellnewproduct from "./Components/sellersHome/Sellnewproduct"
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route exact path="/sellers">
             <Sellers />
+          </Route>
+           <Route exact path="/sellnewproduct">
+            <Sellnewproduct />
           </Route>
         </Switch>
         </Router>
