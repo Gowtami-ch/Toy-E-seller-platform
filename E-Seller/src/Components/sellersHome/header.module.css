@@ -1,4 +1,4 @@
-/* .header {
+.header {
   margin-bottom: 5px;
   padding-bottom: 5px;
   min-height: 100%;
@@ -90,10 +90,10 @@
 }
 .logo {
   margin-left: 25px;
-  height: 75px;
-  width: 75px;
+  height: 80px;
+  width: 130px;
   border-radius: 50%;
-  border: rgb(255, 255, 255) solid 3px;
+  /* border: rgb(255, 255, 255) solid 2px; */
 }
 
 .logo:hover {
@@ -224,4 +224,4 @@
    
     transform: scale3d(1, 1, 1);
   }
-} */
+}
