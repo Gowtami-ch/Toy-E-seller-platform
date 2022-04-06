@@ -225,3 +225,35 @@
     transform: scale3d(1, 1, 1);
   }
 }
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy%20Bubbles");
+
+.remove_underline {
+  text-decoration: none;
+}
+
+.container {
+  background: rgb(255, 255, 255);
+}
+
+.top-container {
+  background: rgb(238, 232, 232);
+  position: relative;
+}
+
+.bottom-container {
+  background: linear-gradient(to left, #e6b65c, #fdc830);
+  padding: 50px 0 20px;
+  text-align: center;
+}
+.copyright {
+  color: #eaf6f6;
+  font-size: 0.75rem;
+  padding: 20px 0;
+}
+
+
+
+
+.footer-link {
+  padding: 5px;
+}

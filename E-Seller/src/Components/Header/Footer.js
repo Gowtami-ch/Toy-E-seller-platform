@@ -1,19 +1,15 @@
 import React from "react";
-import { Header } from "../sellersHome/header";
-import styles from "../sellersHome/sellershome.module.css";
-import Buyershome from "./Buyershome";
-export const Buyers = () => {
+import styles from "./header.module.css";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import logo from "../../Assets/seller_icon_round.png";
+import axios from "axios";
+
+import { useHistory } from "react-router";
+
+export const Footer = () => {
   return (
-    <>
-      <Header />
-      <div className="container-fluid">
-        <div className="row flex-nowrap">
-          <div className="col py-3">
-            <Buyershome />
-          </div>
-        </div>
-      </div>
-      <footer>
+    <footer>
         <div className={styles["bottom-container"]}>
           <a
             className={styles["footer-link"]}
@@ -27,7 +23,6 @@ export const Buyers = () => {
           <p className={styles.copyright}>© 2021 IIT Tirupati</p>
         </div>
       </footer>
-    </>
   );
 };
-export default Buyers;
+
