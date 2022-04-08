@@ -20,7 +20,7 @@
 .content
 {
   flex-grow: 1;
-  background-color:azure ;
+  background-color:white ;
   padding: 100px;
   margin: auto;
 }
@@ -65,7 +65,13 @@
   border: 0.1rem #c0c0c0 solid;
   border-radius: 0.5rem;
 }
-.button
+.colflex
 {
-  
+  display: flex;
+  flex-direction: column;
+}
+.rowflex
+{
+  display: flex;
+  flex-direction: row;
 }

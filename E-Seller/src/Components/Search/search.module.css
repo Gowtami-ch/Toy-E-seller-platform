@@ -1,59 +1,10 @@
-/* .flipkartnavbar {
-    background-color: #2874f0;
-    color: #FFFFFF;
-    margin-left: 20px;
-}
-.row{
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 30%;
-    border: #2874f0;
-}
-
-.flipkartnavbarinput {
-    border: #2874f0;
-    padding: 11px 16px;
-    border-radius: 2px 0 0 2px;
-    border: 0 none;
-    outline: 0 none;
-    font-size: 15px;
-}
-
-.flipkartnavbarbutton {
-    background-color: #ffe11b;
-    border: 1px solid #ffe11b;
-    border-radius: 0 2px 2px 0;
-    color: #1b0606;
-    padding: 10px 10px;
-    height: 43px;
-    cursor: pointer;
-}
-
-.smallsearch{
-    margin-left: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-@media screen and (min-width: 768px) {
-    .largenav {
-        display: block;
-    }
-    .smallnav{
-        display: none;
-    }
-    .smallsearch{
-        margin: 0px;
-    }
-} */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
 .searchbody {
-  border-radius: 0rem;
+  border-radius: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
-
 
 .search {
   position: absolute;
@@ -61,11 +12,11 @@
 }
 
 .searchinput {
-     border-radius: 1rem;
+  border-radius: 1rem;
   width: 600px;
   height: 50px;
   text-indent: 25px;
-  border: 2px solid #d6d4d4;
+  border: 2px solid white;
 }
 
 .searchinput:focus {
@@ -75,7 +26,6 @@
 
 .search .fasearch {
   position: absolute;
-  
 }
 
 .searchbtn {
@@ -89,15 +39,10 @@
 }
 
 .svg {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-    color: azure;
-    margin-right: 8px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  color: white;
+  margin-right: 8px;
 }
-
-
-
-
-
