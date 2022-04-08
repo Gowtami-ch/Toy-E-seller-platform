@@ -1,8 +1,9 @@
 import React from "react";
 import { Header } from "../Header/Header";
+import { Search } from "../Search/search";
 import { Footer } from "../Header/Footer";
 import Grid from "@material-ui/core/Grid";
-import { AddShoppingCart } from '@material-ui/icons';
+import { AddShoppingCart } from "@material-ui/icons";
 import {
   Card,
   CardMedia,
@@ -34,7 +35,7 @@ const products = [
     price: "600",
     img: "https://m.media-amazon.com/images/I/61-76wqNEvL._UX569_.jpg",
   },
-   {
+  {
     id: 4,
     name: "girl jeans",
     description: "girl jean pants",
@@ -55,7 +56,7 @@ const products = [
     price: "600",
     img: "https://m.media-amazon.com/images/I/61-76wqNEvL._UX569_.jpg",
   },
-   {
+  {
     id: 8,
     name: "girl jeans",
     description: "girl jean pants",
@@ -75,31 +76,20 @@ const products = [
     description: "girl churidar2",
     price: "600",
     img: "https://m.media-amazon.com/images/I/61-76wqNEvL._UX569_.jpg",
-  }
+  },
 ];
 const Products = () => {
   return (
     <>
-      <Header />
-      <ul className={"filter"+styles.ui}>
+    <Header />
+      <ul className={"filter" + styles.ui}>
         <li className={styles.li}>
-          <form className={styles.form}>
-            <input className={styles.input}
-              name="searchKeyword"
-            />
-            <button type="submit" className={styles.button}>Search</button>
-          </form>
-        </li>
-        <li>
-          Sort By{' '}
-          <select name="sortOrder" >
-            <option value="">Newest</option>
-            <option value="lowest">Lowest</option>
-            <option value="highest">Highest</option>
-          </select>
+          <Search />
         </li>
       </ul>
-      <main className={styles.content}>
+       <ul className={"filter" + styles.ui}>
+        <li className={styles.li}>
+          <main className={styles.content}>
         <div className={styles.toolbar} />
         <Grid container justify="center" spacing={4}>
           {products.map((product) => (
@@ -131,7 +121,7 @@ const Products = () => {
                   </CardContent>
                   <CardActions disableSpacing className={styles.cardActions}>
                     <IconButton aria-label="Add to Cart">
-                     <AddShoppingCart />
+                      <AddShoppingCart />
                     </IconButton>
                   </CardActions>
                 </Card>
@@ -140,6 +130,9 @@ const Products = () => {
           ))}
         </Grid>
       </main>
+        </li>
+      </ul>
+     
       <Footer />
     </>
   );

@@ -62,7 +62,7 @@ a {
 a:hover {
   color: #ff8000;
 }
-/* Home Screen */
+
  .products {
   display: flex;
   justify-content: center;
@@ -102,7 +102,7 @@ a:hover {
 .product-rating {
   margin-bottom: 1rem;
 }
-/* Reviews */
+
 ul.review {
   list-style-type: none;
   padding: 0;
@@ -115,7 +115,6 @@ ul.review {
   margin: 0.5rem;
 }
 
-/* Rating */
 .rating span {
   color: #ffb901;
   font-size: 1.8rem;
@@ -129,7 +128,7 @@ a > .rating > span:last-child {
   color: #0000ff;
 }
 
-/* Sidebar */
+
 
 .brand button {
   font-size: 3rem;
@@ -165,7 +164,7 @@ a > .rating > span:last-child {
   top: 1.5rem;
 }
 
-/* Product Details */
+
 .details {
   display: flex;
   justify-content: space-between;
@@ -227,7 +226,7 @@ a > .rating > span:last-child {
 .text-center {
   text-align: center;
 }
-/* Cart */
+
 
 .cart {
   display: flex;
@@ -278,7 +277,7 @@ a > .rating > span:last-child {
   text-align: right;
 }
 
-/* forms */
+
 
 .form {
   display: flex;
@@ -307,7 +306,6 @@ input {
   border-radius: 0.5rem;
 }
 
-/* Products */
 
 .product-header {
   display: flex;
@@ -329,7 +327,7 @@ tbody > tr:nth-child(odd) {
   background-color: #f0f0f0;
 }
 
-/* Checkout Steps */
+
 
 .checkout-steps {
   display: flex;
@@ -348,7 +346,7 @@ tbody > tr:nth-child(odd) {
   color: #f08000;
 }
 
-/* Place Order */
+
 
 .placeorder {
   display: flex;
@@ -394,7 +392,7 @@ tbody > tr:nth-child(odd) {
   width: 100%;
 }
 
-/* Profile */
+
 
 .profile {
   display: flex;
@@ -408,7 +406,7 @@ tbody > tr:nth-child(odd) {
   flex: 3 1 60rem;
 }
 
-/* admin */
+
 .dropdown {
   display: inline-block;
   position: relative;
@@ -428,7 +426,7 @@ tbody > tr:nth-child(odd) {
   display: block;
 }
 
-/* filter */
+
 
 .filter {
   display: flex;

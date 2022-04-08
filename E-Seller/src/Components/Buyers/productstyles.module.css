@@ -21,22 +21,21 @@
 {
   flex-grow: 1;
   background-color:azure ;
-  padding: 3px;
+  padding: 100px;
+  margin: auto;
 }
 
-button {
+.button {
   font-size: 1.6rem;
 }
 .full-width {
   width: 100%;
 }
-#root {
-  height: 100%;
-}
+
 
 .ui
 {
-
+  
 }
 .li
 {
@@ -68,5 +67,5 @@ button {
 }
 .button
 {
-
+  
 }
