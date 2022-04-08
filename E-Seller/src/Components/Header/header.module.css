@@ -1,20 +1,21 @@
+/* Header */
 .header {
   margin-bottom: 5px;
   padding-bottom: 5px;
   min-height: 100%;
   display: flex;
   align-items: flex-end;
-  background: #fdc830; 
+  background: #053f7d; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to left,
-    #e6b65c,
-    #fdc830
-  );
+    #053f7d,
+    #053f7d
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to left,
-    #e6b65c,
-    #fdc830
-  );
+    #053f7d,
+    #053f7d
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   position: relative;
   top: 0px;
@@ -39,7 +40,9 @@
   text-shadow: 1px 1px 6px white;
 }
 
-
+/* .whiteHeader div a img:hover {
+    text-shadow: 1px 1px 6px rgb(0, 0, 0);
+  } */
 
 .whiteHeader ul li {
   color: black;
@@ -82,7 +85,6 @@
   font-family: "Josefin Sans", sans-serif;
   color: white;
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
- 
 }
 
 .heading:hover {
@@ -90,15 +92,13 @@
 }
 .logo {
   margin-left: 25px;
-  height: 80px;
-  width: 130px;
+  height: 70px;
+  width: 120px;
   border-radius: 50%;
-  /* border: rgb(255, 255, 255) solid 2px; */
+  
 }
 
-.logo:hover {
-  animation: borderGrow 0.5s 1 forwards;
-}
+
 
 @keyframes borderGrow {
   0% {
@@ -119,7 +119,7 @@
   padding: 5px;
   margin: 1px;
   color: white;
-
+  /* box-shadow: 2px 2px 5px black; */
 }
 .navLoginBtn {
   margin: 2px;
@@ -127,10 +127,11 @@
   border-radius: 20px;
 }
 .navLoginBtn:hover {
- 
+  /* box-shadow: 2px 2px 7px 2px rgb(95, 18, 18);
+  font-size: 1.2em; */
   animation: move 5s infinite forwards;
   animation-timing-function: cubic-bezier();
- 
+  /* font-weight: bold; */
 }
 #navSignUp {
   border: none;
@@ -147,6 +148,33 @@
   flex-direction: row;
   align-items: center;
 }
+
+
+.cartsvg:hover 
+{
+  animation: move 5s infinite forwards;
+  animation-timing-function: cubic-bezier();
+}
+.cartsvg {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.itemnumber {
+   
+    background-color: rgba(0, 0, 0, .1);
+    height: 30px;
+    
+    font-weight: 500;
+    margin-right: 12px;
+    color: #fff;
+    line-height: 30px;
+    
+}
+
 
 @media screen and (max-width: 770px) {
   .header {
@@ -212,19 +240,21 @@
 
 @keyframes move {
   0% {
-    
+    /* transform: translateX(0px); */
     transform: scale3d(1, 1, 1);
   }
   30% {
-   
+    /* transform: translateX(0px); */
     transform: scale3d(1.1, 1.1, 1);
   }
 
   60% {
-   
+    /* transform: translateX(0px); */
     transform: scale3d(1, 1, 1);
   }
 }
+
+/* footer */
 @import url("https://fonts.googleapis.com/css2?family=Fuzzy%20Bubbles");
 
 .remove_underline {
@@ -241,7 +271,7 @@
 }
 
 .bottom-container {
-  background: linear-gradient(to left, #e6b65c, #fdc830);
+  background: linear-gradient(to left, #053f7d, #053f7d);
   padding: 50px 0 20px;
   text-align: center;
 }
@@ -256,4 +286,11 @@
 
 .footer-link {
   padding: 5px;
+}
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{  display:block; opacity: 0;  visibility: hidden; transition:.3s; margin-top:0;  }
+	.navbar .nav-item:hover .nav-link{ color: #fff;  }
+	.navbar .dropdown-menu.fade-down{ top:80%; transform: rotateX(-75deg); transform-origin: 0% 0%; }
+	.navbar .dropdown-menu.fade-up{ top:180%;  }
+	.navbar .nav-item:hover .dropdown-menu{ transition: .3s; opacity:1; visibility:visible; top:100%; transform: rotateX(0deg); }
 }

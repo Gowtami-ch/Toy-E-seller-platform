@@ -1,7 +1,7 @@
 body {
   overflow-x: scroll;
 }
-input,
+/* input,
 textarea {
   background-color: #f3e5f5;
   border-radius: 50px !important;
@@ -12,9 +12,9 @@ textarea {
   font-size: 16px !important;
   color: #000 !important;
   font-weight: 400;
-}
+} */
 
-input:focus,
+/* input:focus,
 textarea:focus {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -22,20 +22,20 @@ textarea:focus {
   border: 1px solid #d500f9 !important;
   outline-width: 0;
   font-weight: 400;
-}
+} */
 
-button:focus {
+/* button:focus {
   -moz-box-shadow: none !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   outline-width: 0;
-}
+} */
 
-::placeholder {
+/* ::placeholder {
   color: rgba(201, 201, 201, 0.781) !important;
   opacity: 1;
-}
-
+} */
+/* 
 :-ms-input-placeholder {
   color: #000 !important;
 }
@@ -49,16 +49,16 @@ a {
 
 a:hover {
   color: #000 !important;
-}
+} */
 
-.nav-link:hover {
+/* .nav-link:hover { */
   /* box-shadow: 2px 2px 7px 2px rgb(95, 18, 18);
   font-size: 1.2em; */
-  animation: move 5s infinite forwards;
+  /* animation: move 5s infinite forwards;
   animation-timing-function: cubic-bezier();
   font-weight: bold;
   color: #000;
-}
+} */
 
 .warning {
   font: bold 1.8em sans-serif;
