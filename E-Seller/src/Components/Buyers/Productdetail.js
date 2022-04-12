@@ -61,13 +61,13 @@ export const Productdetail = (props) => {
             </ul>
             <button
               type="button"
-              className={"btn btn-warning " + " " + styles.cartbtn}
+              className={"btn btn-warning  " + styles.cartbtn}
             >
               Add To Cart
             </button>
             <button
               type="button"
-              className={"btn btn-success " + " " + styles.buybtn}
+              className={"btn btn-success  " + styles.buybtn}
             >
               Buy Now
             </button>

@@ -1,9 +1,31 @@
 import React from "react";
+import { useState } from "react";
 import { Header } from "../Header/Header";
 import { Footer } from "../Header/Footer";
-import styles from "./cart.module.css"
-import {products} from "../Products"
+import styles from "./cart.module.css";
+import { products } from "../Products";
+import DeleteConfirmation from "./DeleteConfirmation";
+
 export const Cart = () => {
+  const [id, setId] = useState(null);
+  const [displayConfirmationModal, setDisplayConfirmationModal] =
+    useState(false);
+  const [deleteMessage, setDeleteMessage] = useState(null);
+  const [finalMessage, setfinalMessage] = useState(null);
+  const showDeleteModal = (id) => {
+    setId(id);
+    setDeleteMessage("Are you sure you want to remove from the cart??");
+    setDisplayConfirmationModal(true);
+  };
+
+  const hideConfirmationModal = () => {
+    setDisplayConfirmationModal(false);
+  };
+
+  const submitDelete = (type, id) => {
+    setfinalMessage("deleted successfully");
+    setDisplayConfirmationModal(false);
+  };
   return (
     <>
       <Header />
@@ -45,7 +67,10 @@ export const Cart = () => {
                   {products.map((product) => (
                     <tr>
                       <td>
-                        <img src="https://dummyimage.com/50x50/55595c/fff" alt="..."/>{" "}
+                        <img
+                          src="https://dummyimage.com/50x50/55595c/fff"
+                          alt="..."
+                        />{" "}
                       </td>
                       <td>{product.name}</td>
                       <td>In stock</td>
@@ -53,15 +78,22 @@ export const Cart = () => {
                         {/* <input className="form-control" type="text" value="1" /> */}
                         <div className={styles.number}>
                           <span className={styles.minus}>-</span>
-                          <input type="text" className={styles.inputtxt} value="1" />
+                          <input
+                            type="text"
+                            className={styles.inputtxt}
+                            value="1"
+                          />
                           <span className={styles.plus}>+</span>
                         </div>
                       </td>
                       <td className="text-right">{product.price}</td>
                       <td className="text-right">
                         <button className="btn btn-sm btn-danger">
-                          <i className="fa fa-trash"></i>{" "}
-                        </button>{" "}
+                          <i
+                            className="fa fa-trash"
+                            onClick={() => showDeleteModal(product.id)}
+                          ></i>
+                        </button>
                       </td>
                     </tr>
                   ))}
@@ -116,6 +148,13 @@ export const Cart = () => {
       </div>
 
       <Footer />
+      <DeleteConfirmation
+        showModal={displayConfirmationModal}
+        confirmModal={submitDelete}
+        hideModal={hideConfirmationModal}
+        id={id}
+        message={deleteMessage}
+      />
     </>
   );
 };

@@ -1,4 +1,5 @@
 change products page by adding sort thing and pagination
-add product detail page links
+//add product detail page  - done
+get data from previous page in detail page
 add payments page
-popup pages for delete,remove etc
+//popup pages for delete,remove etc-done
