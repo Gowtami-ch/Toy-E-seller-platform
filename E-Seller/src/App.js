@@ -1,10 +1,11 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch,Link } from "react-router-dom";
 import {Signup} from "./Components/signup/Signup";
 import {Register} from "./Components/signup/Registrartion"
 import {Products} from "./Components/Buyers/Products"
 import {Cart} from "./Components/cart/Cart"
+import {Productdetail} from "./Components/Buyers/Productdetail"
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <Cart />
+          </Route>
+           <Route exact path="/productdetail">
+            <Productdetail />
           </Route>
         </Switch>
         </Router>

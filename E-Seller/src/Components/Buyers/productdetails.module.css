@@ -1,0 +1,42 @@
+.table1
+{
+    border: 3cm;
+    width: 100%;
+}
+.col1
+{
+    width: 25%;
+}
+.img
+{
+    width:100%;
+}
+.checked 
+{
+  color: orange;
+}
+.cartbtn
+{
+   color: white;
+   background-color: orange;
+   margin-right: 30px;
+  
+}
+.buybtn
+{
+  color: white;
+   background-color: green;
+   margin-left:20px ;
+}
+.description
+{
+   font-size: 30px;
+   font-weight: 400;
+   color: rgb(83, 13, 13);
+  
+}
+.Name
+{
+    font-size: 40px;
+    font-weight: lighter;
+}

@@ -12,8 +12,71 @@ import {
   Typography,
   IconButton,
 } from "@material-ui/core";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styles from "./productstyles.module.css";
 import { products } from "../Products";
+function Productrating(props) {
+  const rating = props.rating;
+  switch (rating) {
+    case 1:
+      return (
+        <>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className="fa fa-star "></span>
+          <span className="fa fa-star "></span>
+          <span className="fa fa-star "></span>
+          <span className="fa fa-star "></span>
+        </>
+      );
+      break;
+    case 2:
+      return (
+        <>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className="fa fa-star "></span>
+          <span className="fa fa-star "></span>
+          <span className="fa fa-star "></span>
+        </>
+      );
+      break;
+    case 3:
+      return (
+        <>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className="fa fa-star "></span>
+          <span className="fa fa-star "></span>
+        </>
+      );
+      break;
+    case 4:
+      return (
+        <>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className="fa fa-star "></span>
+        </>
+      );
+      break;
+    case 5:
+      return (
+        <>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+          <span className={"fa fa-star checked " + styles.checked}></span>
+        </>
+      );
+      break;
+    default:
+      break;
+  }
+}
 export const Products = () => {
   return (
     <>
@@ -50,74 +113,70 @@ export const Products = () => {
 
       <div>
         <ul className={"filter" + styles.ui}>
-          <li className={styles.li}>
+          <li className={styles.licard}>
             <main className={styles.content}>
               <div className={styles.toolbar} />
               <Grid container justify="center" spacing={3}>
                 {products.map((product) => (
                   <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
                     <div>
-                      <Card className={styles.root}>
-                        <CardMedia
-                          className={styles.media}
-                          image={product.img}
-                          title={product.name}
-                        />
-                        <CardContent>
-                          <div className={styles.cardContent}>
+                      <Link
+                        to={{
+                          pathname: "/productdetail",
+                          param1: product,
+                        }}
+                        style={{ textDecoration: "none" }}
+                      >
+                        <Card className={styles.root}>
+                          <CardMedia
+                            className={styles.media}
+                            image={product.img}
+                            title={product.name}
+                          />
+                          <CardContent>
+                            <div className={styles.cardContent}>
+                              <Typography
+                                gutterBottom
+                                variant="h5"
+                                component="h2"
+                              >
+                                {product.name}
+                              </Typography>
+                              <Typography
+                                gutterBottom
+                                variant="h5"
+                                component="h2"
+                              >
+                                {product.price}
+                              </Typography>
+                            </div>
                             <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="h2"
+                              variant="body2"
+                              color="textSecondary"
+                              component="p"
                             >
-                              {product.name}
+                              {" "}
+                              {product.description}
                             </Typography>
-                            <Typography
-                              gutterBottom
-                              variant="h5"
-                              component="h2"
-                            >
-                              {product.price}
+                            <Typography>
+                              {" "}
+                              {/* {product.rating} */}
+                              <Productrating rating={product.rating} />
+                              <span className={styles.reviewer}>
+                                {product.raters}
+                              </span>
                             </Typography>
-                          </div>
-                          <Typography
-                            variant="body2"
-                            color="textSecondary"
-                            component="p"
+                          </CardContent>
+                          <CardActions
+                            disableSpacing
+                            className={styles.cardActions}
                           >
-                            {" "}
-                            {product.description}
-                          </Typography>
-                          <Typography>
-                            {" "}
-                            {/* {product.rating} */}
-                            <span
-                              className={"fa fa-star checked " + styles.checked}
-                            ></span>
-                            <span
-                              className={"fa fa-star checked " + styles.checked}
-                            ></span>
-                            <span
-                              className={"fa fa-star checked " + styles.checked}
-                            ></span>
-                            <span
-                              className={"fa fa-star checked " + styles.checked}
-                            ></span>
-                            <span
-                              className={"fa fa-star checked " + styles.checked}
-                            ></span>
-                            <span className={styles.reviewer}>{product.reviewers}</span>
-                          </Typography>
-                        </CardContent>
-                        <CardActions
-                          disableSpacing
-                          className={styles.cardActions}
-                        >
-                          <IconButton aria-label="Add to Cart">
-                            <AddShoppingCart />
-                          </IconButton>
-                        </CardActions>
-                      </Card>
+                            <IconButton aria-label="Add to Cart">
+                              <AddShoppingCart />
+                            </IconButton>
+                          </CardActions>
+                        </Card>
+                      </Link>
                     </div>
                   </Grid>
                 ))}
