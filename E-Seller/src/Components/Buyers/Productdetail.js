@@ -41,24 +41,52 @@ export const Productdetail = (props) => {
             <span className={"fa fa-star checked " + styles.checked}></span>
             <span className={"fa fa-star checked " + styles.checked}></span>
             <span className="fa fa-star "></span>
-            <ul>
-              <li>
+            <br /><br />
+              <div>
+                <img
+                  src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
+                  width="18"
+                  height="18"
+                ></img>&nbsp;&nbsp;
                 Special PriceGet extra 16% off (price inclusive of discount) T&C
-              </li>
-              <li>
-                {" "}
+              <br />
+              
+                <img
+                  src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
+                  width="18"
+                  height="18"
+                ></img>&nbsp;&nbsp;
                 Bank Offer 10% Instant Discount with Axis Bank Credit and Debit
                 CardsT&C{" "}
-              </li>
-              <li>
+              <br />
+              
+                <img
+                  src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
+                  width="18"
+                  height="18"
+                ></img>&nbsp;&nbsp;
                 Bank Offer 10% Instant Discount on Mastercard on Fashion for
                 First 3 Prepaid PaymentsT&C
-              </li>
-              <li>
+              <br />
+              
+                <img
+                  src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
+                  width="18"
+                  height="18"
+                ></img>&nbsp;&nbsp;
                 Bank Offer 10% Instant Discount on ICICI Bank Credit Cards. T&C
-              </li>
-              <li>Bank Offer 10% Instant Discount on IBM Pay. T&C</li>
-            </ul>
+              <br />
+              
+                <img
+                  src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90"
+                  width="18"
+                  height="18"
+                ></img>&nbsp;&nbsp;
+                Bank Offer 10% Instant Discount on IBM Pay. T&C
+              <br />
+            </div>
+            <br />
+
             <button
               type="button"
               className={"btn btn-warning  " + styles.cartbtn}
