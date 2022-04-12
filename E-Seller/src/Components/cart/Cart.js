@@ -2,71 +2,7 @@ import React from "react";
 import { Header } from "../Header/Header";
 import { Footer } from "../Header/Footer";
 import styles from "./cart.module.css"
-const products = [
-  {
-    id: 1,
-    name: "girl jeans",
-    description: "girl jean pants",
-    price: "700",
-    img: "https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzE2aU5YT3dDVFMuX0FDX1VMMTUwMF8uanBn.jpg",
-  },
-  {
-    id: 2,
-    name: "churidar",
-    description: "girl churidar",
-    price: "400",
-    img: "https://rukminim1.flixcart.com/image/714/857/ethnic-set/f/r/h/kr-525-cream-aarika-11-12-years-original-imaefktepmtkzyjy.jpeg?q=50",
-  },
-  {
-    id: 3,
-    name: "churidhar2",
-    description: "girl churidar2",
-    price: "600",
-    img: "https://m.media-amazon.com/images/I/61-76wqNEvL._UX569_.jpg",
-  },
-  {
-    id: 4,
-    name: "girl jeans",
-    description: "girl jean pants",
-    price: "700",
-    img: "https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzE2aU5YT3dDVFMuX0FDX1VMMTUwMF8uanBn.jpg",
-  },
-  {
-    id: 5,
-    name: "churidar",
-    description: "girl churidar",
-    price: "400",
-    img: "https://rukminim1.flixcart.com/image/714/857/ethnic-set/f/r/h/kr-525-cream-aarika-11-12-years-original-imaefktepmtkzyjy.jpeg?q=50",
-  },
-  {
-    id: 6,
-    name: "churidhar2",
-    description: "girl churidar2",
-    price: "600",
-    img: "https://m.media-amazon.com/images/I/61-76wqNEvL._UX569_.jpg",
-  },
-  {
-    id: 8,
-    name: "girl jeans",
-    description: "girl jean pants",
-    price: "700",
-    img: "https://www.ubuy.co.in/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvNzE2aU5YT3dDVFMuX0FDX1VMMTUwMF8uanBn.jpg",
-  },
-  {
-    id: 9,
-    name: "churidar",
-    description: "girl churidar",
-    price: "400",
-    img: "https://rukminim1.flixcart.com/image/714/857/ethnic-set/f/r/h/kr-525-cream-aarika-11-12-years-original-imaefktepmtkzyjy.jpeg?q=50",
-  },
-  {
-    id: 10,
-    name: "churidhar2",
-    description: "girl churidar2",
-    price: "600",
-    img: "https://m.media-amazon.com/images/I/61-76wqNEvL._UX569_.jpg",
-  },
-];
+import {products} from "../Products"
 export const Cart = () => {
   return (
     <>

@@ -1,0 +1,4 @@
+change products page by adding sort thing and pagination
+add product detail page
+add payments page
+popup pages for delete,remove etc
