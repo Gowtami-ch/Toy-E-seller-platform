@@ -45,7 +45,7 @@ export const Cart = () => {
                   {products.map((product) => (
                     <tr>
                       <td>
-                        <img src="https://dummyimage.com/50x50/55595c/fff" />{" "}
+                        <img src="https://dummyimage.com/50x50/55595c/fff" alt="..."/>{" "}
                       </td>
                       <td>{product.name}</td>
                       <td>In stock</td>

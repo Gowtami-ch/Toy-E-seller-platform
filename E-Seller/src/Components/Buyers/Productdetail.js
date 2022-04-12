@@ -5,6 +5,7 @@ import { products } from "../Products";
 import { Link, useParams, useLocation } from "react-router-dom";
 import styles from "./productdetails.module.css";
 export const Productdetail = (props) => {
+  console.log(props.location);
   return (
     <>
       <Header />

@@ -123,7 +123,7 @@ export const Products = () => {
                       <Link
                         to={{
                           pathname: "/productdetail",
-                          param1: product,
+                          state: product,
                         }}
                         style={{ textDecoration: "none" }}
                       >
