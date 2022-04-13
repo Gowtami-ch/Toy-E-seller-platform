@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Header } from "../Header/Header";
 import { Search } from "../Search/search";
 import { Footer } from "../Header/Footer";
@@ -15,8 +15,11 @@ import {
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styles from "./productstyles.module.css";
 import { products } from "../Products";
+import ReactPaginate from "react-paginate";
 function Productrating(props) {
   const rating = props.rating;
+  const [items, setItems] = useState([]);
+  const [currPage,setCurrPage]=useState(1);
   switch (rating) {
     case 1:
       return (
@@ -78,6 +81,12 @@ function Productrating(props) {
   }
 }
 export const Products = () => {
+  const pageCount=products.length/12;
+  const handlePageClick = () =>
+  {
+    //  setCurrPage(currPage+1);
+     
+  }
   return (
     <>
       <Header />
@@ -185,7 +194,25 @@ export const Products = () => {
           </li>
         </ul>
       </div>
-
+      <ReactPaginate
+        previousLabel={"Previous <<"}
+        nextLabel={"Next >>"}
+        breakLabel={"..."}
+        pageCount={pageCount}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={3}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination justify-content-center"}
+        pageClassName={"page-item"}
+        pageLinkClassName={"page-link"}
+        previousClassName={"page-item"}
+        previousLinkClassName={"page-link"}
+        nextClassName={"page-item"}
+        nextLinkClassName={"page-link"}
+        breakClassName={"page-item"}
+        breakLinkClassName={"page-link"}
+        activeClassName={"active"}
+      />
       <Footer />
     </>
   );
