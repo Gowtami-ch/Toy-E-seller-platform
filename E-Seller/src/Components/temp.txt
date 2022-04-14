@@ -4,3 +4,4 @@ change products page by adding sort thing
 //add payments page - done
 //popup pages for delete,remove etc-done
 //tracking-done
+//profile page - done {Address will be in profile page}

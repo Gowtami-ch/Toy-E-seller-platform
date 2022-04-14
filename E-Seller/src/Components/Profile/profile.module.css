@@ -1,5 +1,5 @@
 .model {
-  background-color: rgb(99, 39, 120);
+  background-color: rgb(173, 211, 108);
   display: flex;
 }
 
@@ -26,10 +26,6 @@
 
 .profile-button:hover {
   background: #682773;
-  animation: move 5s infinite forwards;
-  animation-timing-function: cubic-bezier();
-  font-weight: bold;
-  color: #000;
 }
 
 .profile-button:focus {
@@ -51,7 +47,7 @@
   font-size: 12px;
   font-weight: bold;
   /* font-weight: 10; */
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+ font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   /* font-family: Georgia, "Times New Roman", Times, serif; */
 }
 
@@ -65,21 +61,4 @@
 .view {
   margin: 0px;
   margin-bottom: 2px;
-}
-
-@keyframes move {
-  0% {
-    /* transform: translateX(0px); */
-    transform: scale3d(1, 1, 1);
-  }
-  30%,
-  40% {
-    /* transform: translateX(0px); */
-    transform: scale3d(1.1, 1.1, 1);
-  }
-
-  70% {
-    /* transform: translateX(0px); */
-    transform: scale3d(1, 1, 1);
-  }
 }
