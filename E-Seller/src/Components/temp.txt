@@ -1,6 +1,6 @@
 change products page by adding sort thing 
 //pagination-done
 //add product detail page  - done
-add payments page
+//add payments page - done
 //popup pages for delete,remove etc-done
 //tracking-done
