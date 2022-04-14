@@ -6,6 +6,7 @@ import {Register} from "./Components/signup/Registrartion"
 import {Products} from "./Components/Buyers/Products"
 import {Cart} from "./Components/cart/Cart"
 import {Productdetail} from "./Components/Buyers/Productdetail"
+import { Tracking } from "./Components/Tracking/Tracking";
 function App() {
   return (
     <div className="App">
@@ -25,6 +26,9 @@ function App() {
           </Route>
            <Route exact path="/productdetail">
             <Productdetail />
+          </Route>
+           <Route exact path="/tracking">
+            <Tracking />
           </Route>
         </Switch>
         </Router>
