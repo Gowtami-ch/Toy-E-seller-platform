@@ -7,6 +7,7 @@ import {Products} from "./Components/Buyers/Products"
 import {Cart} from "./Components/cart/Cart"
 import {Productdetail} from "./Components/Buyers/Productdetail"
 import { Tracking } from "./Components/Tracking/Tracking";
+import { Payment } from "./Components/Payments/Payment";
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,9 @@ function App() {
           </Route>
            <Route exact path="/tracking">
             <Tracking />
+          </Route>
+           <Route exact path="/payment">
+            <Payment />
           </Route>
         </Switch>
         </Router>
