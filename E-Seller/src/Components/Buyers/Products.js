@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header } from "../Header/Header";
 import { Search } from "../Search/search";
 import { Footer } from "../Header/Footer";
+import { Filterbar } from '../Filterbar/Filterbar';
 import Grid from "@material-ui/core/Grid";
 import { AddShoppingCart } from "@material-ui/icons";
 import {
@@ -94,7 +95,11 @@ export const Products = () => {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
-
+      <div className="d-flex align-items-stretch">
+      <div>
+        <Filterbar/>
+      </div>
+      <div>
       <ul className={"filter" + styles.ui}>
         <li className={styles.li}>
           <form className="form-inline my-2 my-lg-0">
@@ -213,6 +218,8 @@ export const Products = () => {
         breakLinkClassName={"page-link"}
         activeClassName={"active"}
       />
+      </div>
+      </div>
       <Footer />
     </>
   );
