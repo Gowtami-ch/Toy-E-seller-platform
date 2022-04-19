@@ -2,8 +2,8 @@
 
 const express = require("express");
 const {
-  registerUser,
-  registerOrganizer,
+  registerBuyer,
+  registerSeller,
 } = require("../controllers/registration");
 
 // router middleware
@@ -11,8 +11,8 @@ const router = express.Router();
 
 // Probably better to use a middleware and disambiguate the model
 // Then from here i can post to a single controller
-router.route("/").post(registerUser);
+router.route("/").post(registerBuyer);
 
-router.route("/organizer").post(registerOrganizer);
+router.route("/seller").post(registerSeller);
 
 module.exports = router;

@@ -1,25 +1,25 @@
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError } = require("../errors");
-const User = require("../models/user");
+const Buyer = require("../models/buyer");
 
 const getProfile = async (req, res) => {
-  const { _id } = req.user;
+  const { _id } = req.buyer;
 
-  const user = await User.findOne({ _id });
+  const buyer = await Buyer.findOne({ _id });
 
-  if (!user) {
-    throw new BadRequestError("No Such User");
+  if (!buyer) {
+    throw new BadRequestError("No Such Buyer");
   }
   const profile = {
-    BirthDay: user.birthday,
-    Gender: user.gender,
-    Hobbies: user.hobbies,
-    Keywords: user.keywords,
-    UserName: user.username,
-    EmailID: user.email,
-    Phone: user.phone,
-    Interests: user.interests,
-    About: user.about,
+    BirthDay: buyer.birthday,
+    Gender: buyer.gender,
+    Hobbies: buyer.hobbies,
+    Keywords: buyer.keywords,
+    BuyerName: buyer.buyername,
+    EmailID: buyer.email,
+    Phone: buyer.phone,
+    Interests: buyer.interests,
+    About: buyer.about,
   };
 
   return res.status(StatusCodes.OK).json({ status: "success", data: profile });
@@ -27,9 +27,9 @@ const getProfile = async (req, res) => {
 
 const postProfile = async (req, res) => {
   const { BirthDay, Gender, Hobbies, Interests, Phone, About } = req.body;
-  const { _id } = req.user;
+  const { _id } = req.buyer;
 
-  await User.findByIdAndUpdate(_id, {
+  await Buyer.findByIdAndUpdate(_id, {
     $set: {
       birthday: BirthDay,
       gender: Gender,
@@ -45,17 +45,17 @@ const postProfile = async (req, res) => {
   });
 };
 
-const getEventDetails = async (req, res) => {
-  const { _id } = req.user;
-  const user = await User.findById(_id);
+const getProductDetails = async (req, res) => {
+  const { _id } = req.buyer;
+  const buyer = await Buyer.findById(_id);
 
-  if (!user) {
-    throw new BadRequestError("No Such User Exists");
+  if (!buyer) {
+    throw new BadRequestError("No Such Buyer Exists");
   }
 
-  const favEventsList = user.favouriteEvents;
+  const favProductsList = buyer.favouriteProducts;
 
-  res.status(200).json({ success: "true", data: favEventsList });
+  res.status(200).json({ success: "true", data: favProductsList });
 };
 
-module.exports = { postProfile, getProfile, getEventDetails };
+module.exports = { postProfile, getProfile, getProductDetails };

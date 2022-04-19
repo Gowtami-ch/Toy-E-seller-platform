@@ -103,6 +103,57 @@ const createReview = async (req, res) => {
   await Review.create(newReview);
   res.status(200).json({ success: "true", data: newReview });
 };
+
+const getCartItems = async (req, res) => {
+  const { _id } = req.buyer;
+  const cartItems = await Buyer.findById(_id).populate("cartItems");
+
+  if (!cartItems) {
+    throw new BadRequestError("There is No Such Buyer");
+  }
+  res.status(200).json({
+    success: "true",
+    data: cartItems.toJSON({ virtuals: true }).cartItems,
+  });
+};
+
+const addToCartItems = async (req, res) => {
+  const { productId } = req.body;
+  const { _id } = req.buyer;
+  const product = await Product.findById(productId);
+  if (!product) {
+    throw new BadRequestError("No Such Product");
+  }
+  const productAddedToCartItems = await Buyer.findByIdAndUpdate(_id, {
+    $push: { cartItems: productId },
+  });
+
+  if (!productAddedToCartItems) {
+    throw new BadRequestError("There Was Some Error");
+  }
+
+  //   Return on a test basis
+  res.status(200).json({ success: "true", data: productAddedToCartItems });
+};
+
+const removeFromCartItems = async (req, res) => {
+  const { productId } = req.body;
+  const { _id } = req.buyer;
+  const product = await Product.findById(productId);
+  if (!product) {
+    throw new BadRequestError("No Such Product");
+  }
+  const productAddedToCartItems = await Buyer.findByIdAndUpdate(_id, {
+    $pull: { cartItems: productId },
+  });
+
+  if (!productAddedToCartItems) {
+    throw new BadRequestError("There Was Some Error");
+  }
+
+  //   Return on a test basis
+  res.status(200).json({ success: "true", data: productAddedToCartItems });
+};
 module.exports = {
   createReview,
   getFavourites,
@@ -110,4 +161,7 @@ module.exports = {
   getAllProducts,
   getProductById,
   removeFromFavourites,
+  getCartItems,
+  addToCartItems,
+  removeFromCartItems,
 };

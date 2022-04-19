@@ -6,7 +6,7 @@ const auth = require("../middleware/auth");
 const {
   postProfile,
   getProfile,
-  getEventDetails,
+  getProductDetails,
 } = require("../controllers/profile");
 
 const router = express.Router();
@@ -15,5 +15,5 @@ router.route("/").get(auth, getProfile);
 
 router.route("/edit").post(auth, postProfile);
 
-router.route("/event_details").get(auth, getEventDetails);
+router.route("/product_details").get(auth, getProductDetails);
 module.exports = router;
