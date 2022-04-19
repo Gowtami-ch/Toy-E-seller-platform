@@ -11,6 +11,9 @@ const {
   getProductById,
   createReview,
   removeFromFavourites,
+  getCartItems,
+  addToCartItems,
+  removeFromCartItems,
 } = require("../controllers/buyer");
 
 const router = express.Router();
@@ -25,8 +28,12 @@ router
 router.route("/removeFromFavourites").post(auth, removeFromFavourites);
 
 // Get specific event by id->query parameter
-router.route("/event").get(auth, getProductById);
+router.route("/product").get(auth, getProductById);
 
 router.route("/reviews").post(auth, createReview);
+
+router.route("/cartItems").get(auth, getCartItems).post(auth, addToCartItems);
+
+router.route("/removeFromCartItems").post(auth, removeFromCartItems);
 
 module.exports = router;

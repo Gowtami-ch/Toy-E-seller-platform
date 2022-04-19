@@ -1,10 +1,10 @@
 const { BadRequestError, CustomErrorAPI } = require("../errors");
 const { StatusCodes } = require("http-status-codes");
 const bcrypt = require("bcryptjs");
-const User = require("../models/user");
-const Organizer = require("../models/organization");
+const Buyer = require("../models/buyer");
+const Seller = require("../models/seller");
 
-const registerUser = async (req, res) => {
+const registerBuyer = async (req, res) => {
   const { username, password, email } = req.body;
 
   if (!username || !password || !email) {
@@ -32,9 +32,9 @@ const registerUser = async (req, res) => {
   };
 
   // returns new user!!
-  const created = await User.create(newUser);
+  const created = await Buyer.create(newUser);
   if (!created) {
-    const err = new CustomErrorAPI("User Not Created");
+    const err = new CustomErrorAPI("Buyer Not Created");
     err.StatusCode = 401;
     throw err;
   }
@@ -47,12 +47,12 @@ const registerUser = async (req, res) => {
       _id: userId,
       username: username,
       password: password,
-      role: "user",
+      role: "buyer",
     },
   });
 };
 
-const registerOrganizer = async (req, res) => {
+const registerSeller = async (req, res) => {
   const { username, password, email } = req.body;
 
   if (!username || !password || !email) {
@@ -80,7 +80,7 @@ const registerOrganizer = async (req, res) => {
   };
 
   // returns new user!!
-  const created = await Organizer.create(newUser);
+  const created = await Seller.create(newUser);
   if (!created) {
     const err = new CustomErrorAPI("User Not Created");
     err.StatusCode = 401;
@@ -95,8 +95,8 @@ const registerOrganizer = async (req, res) => {
       _id: userId,
       username: username,
       password: password,
-      role: "organizer",
+      role: "seller",
     },
   });
 };
-module.exports = { registerUser, registerOrganizer };
+module.exports = { registerBuyer, registerSeller };
