@@ -38,7 +38,7 @@ const quizRouter = require("./routes/quiz");
 
 const milestonesRouter = require("./routes/milestones");
 
-const eventsRouter = require("./routes/userEvents");
+const eventsRouter = require("./routes/buyer");
 
 const profileRouter = require("./routes/profile");
 
