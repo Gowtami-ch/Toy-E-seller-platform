@@ -28,7 +28,7 @@ const postLogin = async (req, res) => {
     {
       username: user.username,
       _id: user._id.toString(),
-      role: "user",
+      role: "buyer",
     },
     process.env.JWT_SECRET,
     { expiresIn: "2d" }
@@ -60,7 +60,7 @@ const postLoginSeller = async (req, res) => {
     {
       username: user.username,
       _id: user._id.toString(),
-      role: "organizer",
+      role: "seller",
     },
     process.env.JWT_SECRET,
     { expiresIn: "2d" }
