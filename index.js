@@ -5,7 +5,7 @@ require("express-async-errors");
 const express = require("express");
 const app = express();
 
-const connectDb = require("./db/connect");
+const connectDb = require("./config/index");
 require("dotenv").config();
 
 /* Packages for Image Uploading */
@@ -34,17 +34,15 @@ const loginRouter = require("./routes/login");
 
 const registrationRouter = require("./routes/registration");
 
-const quizRouter = require("./routes/quiz");
+const cartRouter = require("./routes/cart");
 
-const milestonesRouter = require("./routes/milestones");
+const orderRouter = require("./routes/order");
 
-const eventsRouter = require("./routes/buyer");
+const paymentRouter = require("./routes/payment");
 
-const profileRouter = require("./routes/profile");
+const productRouter = require("./routes/product");
 
-const organizerRouter = require("./routes/seller");
-
-const mailRouter = require("./routes/mailer");
+const usersRouter = require("./routes/users");
 
 /* modules for authentication */
 const { checkUser } = require("./controllers/home");
@@ -55,7 +53,7 @@ app.use(express.json());
 app.use(cors());
 
 /* static file serving */
-const buildPath = path.join(__dirname, "healify", "build");
+const buildPath = path.join(__dirname, "E-Seller", "build");
 
 app.use(express.static(buildPath));
 
@@ -66,23 +64,21 @@ app.use("/api/v1/login", loginRouter);
 
 app.use("/api/v1/registration", registrationRouter);
 
-app.use("/api/v1/milestones", milestonesRouter);
+app.use("/api/v1/cart", cartRouter);
 
-app.use("/api/v1/quiz", quizRouter);
+app.use("/api/v1/order", orderRouter);
 
-app.use("/api/v1/events", eventsRouter);
+app.use("/api/v1/payment", paymentRouter);
 
-app.use("/api/v1/organizer", organizerRouter);
+app.use("/api/v1/product", productRouter);
 
-app.use("/api/v1/profile", profileRouter);
-
-app.use("/api/v1/mailer", mailRouter);
+app.use("/api/v1/users", usersRouter);
 
 app.get("/api/v1", auth, checkUser);
 
 /* Redirecting get requests to React Router */
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "healify/build/index.html"));
+  res.sendFile(path.join(__dirname, "E-Seller/build/index.html"));
 });
 
 /* Error Paths */
@@ -91,9 +87,9 @@ app.use(error_handler);
 
 const start = async () => {
   try {
-    await connectDb(process.env.MONGO_URI);
-    app.listen(port, () => {
-      console.log(`Listening to port ${port}`);
+    await connectDb.connect(function (err) {
+      if (err) throw err;
+      console.log("Connected!");
     });
   } catch (error) {
     console.log(error);
