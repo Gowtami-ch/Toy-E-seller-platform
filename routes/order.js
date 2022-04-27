@@ -4,12 +4,12 @@ const {
   getAllOrders,
   createOrder,
 } = require("../controllers/orders.controller");
-const verifyToken = require("../middleware/verifyToken");
+const auth = require("../middleware/auth");
 
-router.route("/create").post(verifyToken, createOrder);
+router.route("/create").post(auth, createOrder);
 
-router.route("/").get(verifyToken, getAllOrders);
+router.route("/").get(auth, getAllOrders);
 
-router.route("/:id").get(verifyToken, getOrder);
+router.route("/:id").get(auth, getOrder);
 
 module.exports = router;
