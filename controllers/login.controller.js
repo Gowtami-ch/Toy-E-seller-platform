@@ -1,8 +1,7 @@
 const { StatusCodes } = require("http-status-codes");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const User = require("../models/user");
-const Organizer = require("../models/organization");
+const { getUserByUsernameDb } = require("../db/user.db");
 const { UnauthenticatedError, BadRequestError } = require("../errors");
 require("dotenv").config();
 
@@ -14,7 +13,7 @@ const postLogin = async (req, res) => {
     throw new BadRequestError("Please Enter UserName and Password");
   }
 
-  const user = await User.findOne({ username: username });
+  const user = await getUserByUsernameDb(username);
   if (!user) {
     throw new UnauthenticatedError("Invalid username");
   }
@@ -29,7 +28,7 @@ const postLogin = async (req, res) => {
     {
       username: user.username,
       _id: user._id.toString(),
-      role: "buyer",
+      role: "user",
     },
     process.env.JWT_SECRET,
     { expiresIn: "2d" }
@@ -37,7 +36,7 @@ const postLogin = async (req, res) => {
   res.status(StatusCodes.OK).json({ success: true, data: { token: token } });
 };
 
-/* Login Handler -> Organizer */
+/* Login Handler -> Seller */
 
 const postLoginSeller = async (req, res) => {
   const { username, password } = req.body;
@@ -46,7 +45,7 @@ const postLoginSeller = async (req, res) => {
     throw new BadRequestError("Please Enter UserName and Password");
   }
 
-  const user = await Organizer.findOne({ username: username });
+  const user = await getUserByUsernameDb(username);
   if (!user) {
     throw new UnauthenticatedError("Invalid username");
   }
@@ -61,7 +60,7 @@ const postLoginSeller = async (req, res) => {
     {
       username: user.username,
       _id: user._id.toString(),
-      role: "seller",
+      role: "organizer",
     },
     process.env.JWT_SECRET,
     { expiresIn: "2d" }
