@@ -1,7 +1,10 @@
 /* Routes For Login -> Separate Routes for Organizer and User*/
 
 const express = require("express");
-const { postLogin, postLoginSeller } = require("../controllers/login");
+const {
+  postLogin,
+  postLoginSeller,
+} = require("../controllers/login.controller");
 // router middleware
 const router = express.Router();
 
