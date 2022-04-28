@@ -6,7 +6,7 @@ const {
   deleteProductDb,
   getProductByNameDb,
 } = require("../db/product.db");
-const { ErrorHandler } = require("../helpers/error");
+const { UnauthenticatedError } = require("../errors");
 
 class ProductService {
   getAllProducts = async (page) => {
@@ -15,7 +15,7 @@ class ProductService {
     try {
       return await getAllProductsDb({ limit, offset });
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 
@@ -23,7 +23,7 @@ class ProductService {
     try {
       return await createProductDb(data);
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 
@@ -31,11 +31,11 @@ class ProductService {
     try {
       const product = await getProductDb(id);
       if (!product) {
-        throw new ErrorHandler(404, "product not found");
+        throw new UnauthenticatedError(404, "product not found");
       }
       return product;
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 
@@ -43,10 +43,10 @@ class ProductService {
     try {
       const product = await getProductByNameDb(name);
       if (!product) {
-        throw new ErrorHandler(404, "product not found");
+        throw new UnauthenticatedError(404, "product not found");
       }
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 
@@ -54,11 +54,11 @@ class ProductService {
     try {
       const product = await getProductDb(data.id);
       if (!product) {
-        throw new ErrorHandler(404, "product not found");
+        throw new UnauthenticatedError(404, "product not found");
       }
       return await updateProductDb(data);
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 
@@ -66,11 +66,11 @@ class ProductService {
     try {
       const product = await getProductDb(id);
       if (!product) {
-        throw new ErrorHandler(404, "product not found");
+        throw new UnauthenticatedError(404, "product not found");
       }
       return await deleteProductDb(id);
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 }
