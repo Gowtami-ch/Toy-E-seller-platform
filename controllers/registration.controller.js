@@ -5,9 +5,12 @@ const {
   getUserByEmailDb,
   getUserByUsernameDb,
   createUserDb,
+  getSellerByEmailDb,
+  getSellerByUsernameDb,
+  createSellerDb,
 } = require("../db/user.db");
 
-const registerBuyer = async (req, res) => {
+const registerUser = async (req, res) => {
   const { username, password, email, fullname } = req.body;
 
   if (!username || !password || !email) {
@@ -45,11 +48,11 @@ const registerBuyer = async (req, res) => {
   return res.status(StatusCodes.OK).json({
     success: true,
     data: {
-      _id: newUser.userId,
+      _id: newUser.user_id,
       username: newUser.username,
       fullname: newUser.fullname,
       password: newUser.password,
-      role: "buyer",
+      role: "user",
     },
   });
 };
@@ -61,21 +64,21 @@ const registerSeller = async (req, res) => {
     throw new BadRequestError("Please Enter UserName, email and Password ");
   }
 
-  const isExistingUserName = await getUserByUsernameDb(username);
+  const isExistingUserName = await getSellerByUsernameDb(username);
   if (isExistingUserName) {
     const err = new CustomErrorAPI("UserName already exists");
     err.StatusCode = 401;
     throw err;
   }
 
-  const isExistingEmail = await getUserByUsernameDb(username);
+  const isExistingEmail = await getSellerByEmailDb(username);
   if (isExistingEmail) {
     const err = new CustomErrorAPI("Email Already exists");
     err.StatusCode = 401;
     throw err;
   }
   const securePass = await bcrypt.hash(password, 12);
-  const newUser = createUserDb({
+  const newUser = createSellerDb({
     username: username,
     fullname: fullname,
     password: securePass,
@@ -92,7 +95,7 @@ const registerSeller = async (req, res) => {
   return res.status(StatusCodes.OK).json({
     success: true,
     data: {
-      _id: newUser.userId,
+      _id: newUser.seller_id,
       username: newUser.username,
       fullname: newUser.fullname,
       password: newUser.password,
@@ -100,4 +103,4 @@ const registerSeller = async (req, res) => {
     },
   });
 };
-module.exports = { registerBuyer, registerSeller };
+module.exports = { registerUser, registerSeller };

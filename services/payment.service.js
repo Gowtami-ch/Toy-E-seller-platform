@@ -1,5 +1,5 @@
 const Stripe = require("stripe");
-const { ErrorHandler } = require("../helpers/error");
+const { UnauthenticatedError } = require("../errors");
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 class PaymentService {
@@ -12,7 +12,7 @@ class PaymentService {
         receipt_email: email,
       });
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 }
