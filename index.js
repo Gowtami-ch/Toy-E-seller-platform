@@ -1,5 +1,3 @@
-/* Server For "healify-web app" */
-
 /* Importing Packages*/
 require("express-async-errors");
 const express = require("express");

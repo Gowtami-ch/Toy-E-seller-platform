@@ -3,14 +3,14 @@ const {
   getAllOrdersDb,
   getOrderDb,
 } = require("../db/orders.db");
-const { ErrorHandler } = require("../helpers/error");
+const { UnauthenticatedError } = require("../errors");
 
 class OrderService {
   createOrder = async (data) => {
     try {
       return await createOrderDb(data);
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 
@@ -20,7 +20,7 @@ class OrderService {
     try {
       return await getAllOrdersDb({ userId, limit, offset });
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 
@@ -28,11 +28,11 @@ class OrderService {
     try {
       const order = await getOrderDb(data);
       if (!order) {
-        throw new ErrorHandler(404, "Order does not exist");
+        throw new UnauthenticatedError(404, "Order does not exist");
       }
       return order;
     } catch (error) {
-      throw new ErrorHandler(error.statusCode, error.message);
+      throw new UnauthenticatedError(error.statusCode, error.message);
     }
   };
 }
