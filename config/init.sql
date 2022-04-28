@@ -80,8 +80,6 @@ CREATE TABLE public.users
     email character varying(100) UNIQUE NOT NULL,
     fullname character varying(100) NOT NULL,
     username character varying(50) UNIQUE NOT NULL,
-    google_id character varying(100) UNIQUE,
-    roles character varying(10)[] DEFAULT '{customer}'::character varying[] NOT NULL,
     address character varying(200),
     city character varying(100),
     state character varying(100),
@@ -89,6 +87,27 @@ CREATE TABLE public.users
     created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (user_id)
 );
+
+CREATE TABLE public.sellers
+(
+    seller_id SERIAL NOT NULL,
+    password character varying(200),
+    email character varying(100) UNIQUE NOT NULL,
+    fullname character varying(100) NOT NULL,
+    username character varying(50) UNIQUE NOT NULL,
+    address character varying(200),
+    city character varying(100),
+    state character varying(100),
+    country character varying(100),
+    created_at timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (seller_id)
+);
+
+ALTER TABLE public.products
+    ADD FOREIGN KEY (seller_id)
+    REFERENCES public.sellers (seller_id)
+    ON DELETE SET NULL
+    NOT VALID;
 
 ALTER TABLE public.cart
     ADD FOREIGN KEY (user_id)
