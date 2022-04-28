@@ -43,7 +43,7 @@ const productRouter = require("./routes/product");
 const usersRouter = require("./routes/users");
 
 /* modules for authentication */
-const { checkUser } = require("./controllers/home");
+const { checkUser } = require("./controllers/home.controller");
 const auth = require("./middleware/auth");
 
 /* Using MiddleWare */
