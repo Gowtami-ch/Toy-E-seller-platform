@@ -64,21 +64,67 @@ const deleteUserDb = async (id) => {
   return user[0];
 };
 
-const createUserGoogleDb = async ({ sub, defaultUsername, email, name }) => {
-  const { rows } = await pool.query(
-    `INSERT INTO users(google_id,username, email, fullname) 
-      VALUES($1, $2, $3, $4) ON CONFLICT (email) 
-      DO UPDATE SET google_id = $1, fullname = $4 returning *`,
-    [sub, defaultUsername, email, name]
-  );
-  return rows[0];
+const getAllSellersDb = async () => {
+  const { rows: sellers } = await pool.query("select * from sellers");
+  return sellers;
 };
 
-const changeUserPasswordDb = async (hashedPassword, email) => {
-  return await pool.query("update users set password = $1 where email = $2", [
-    hashedPassword,
-    email,
-  ]);
+const createSellerDb = async ({ username, password, email, fullname }) => {
+  const { rows: seller } = await pool.query(
+    `INSERT INTO sellers(username, password, email, fullname) 
+    VALUES($1, $2, $3, $4) 
+    returning seller_id, username, email, fullname, roles, address, city, state, country, created_at`,
+    [username, password, email, fullname]
+  );
+  return seller[0];
+};
+
+const getSellerByIdDb = async (id) => {
+  const { rows: seller } = await pool.query(
+    "select sellers.* where sellers.seller_id = $1",
+    [id]
+  );
+  return seller[0];
+};
+const getSellerByUsernameDb = async (username) => {
+  const { rows: seller } = await pool.query(
+    "select sellers.* where lower(sellers.username) = lower($1)",
+    [username]
+  );
+  return seller[0];
+};
+
+const getSellerByEmailDb = async (email) => {
+  const { rows: seller } = await pool.query(
+    "select sellers.* where lower(email) = lower($1)",
+    [email]
+  );
+  return seller[0];
+};
+const updateSellerDb = async ({
+  username,
+  email,
+  fullname,
+  id,
+  address,
+  city,
+  state,
+  country,
+}) => {
+  const { rows: seller } = await pool.query(
+    `UPDATE sellers set username = $1, email = $2, fullname = $3, address = $4, city = $5, state = $6, country = $7 
+      where seller_id = $8 returning username, email, fullname, seller_id, address, city, country, state`,
+    [username, email, fullname, address, city, state, country, id]
+  );
+  return seller[0];
+};
+
+const deleteSellerDb = async (id) => {
+  const { rows: seller } = await pool.query(
+    "DELETE FROM sellers where seller_id = $1 returning *",
+    [id]
+  );
+  return seller[0];
 };
 
 module.exports = {
@@ -87,8 +133,13 @@ module.exports = {
   getUserByEmailDb,
   updateUserDb,
   createUserDb,
-  createUserGoogleDb,
   deleteUserDb,
   getUserByUsernameDb,
-  changeUserPasswordDb,
+  getAllSellersDb,
+  getSellerByIdDb,
+  getSellerByEmailDb,
+  updateSellerDb,
+  createSellerDb,
+  deleteSellerDb,
+  getSellerByUsernameDb,
 };
