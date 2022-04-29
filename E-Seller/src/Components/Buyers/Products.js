@@ -5,7 +5,7 @@ import { Footer } from "../Header/Footer";
 import { Filterbar } from '../Filterbar/Filterbar';
 import Grid from "@material-ui/core/Grid";
 import { AddShoppingCart } from "@material-ui/icons";
-import {
+import { 
   Card,
   CardMedia,
   CardContent,

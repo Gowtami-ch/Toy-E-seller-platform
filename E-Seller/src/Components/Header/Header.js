@@ -1,4 +1,5 @@
 import React from "react";
+import { Link }  from "react-router-dom";
 
 export const Header = () => {
   return (
@@ -31,38 +32,41 @@ export const Header = () => {
           >
             <ul className="navbar-nav m-auto">
               <li className="nav-item m-auto">
+                <Link to="/">
                 <a className="nav-link" >
                   Home
-                </a>
+                </a></Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" >
+               <Link to="/login"> <a className="nav-link" >
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login
-                </a>
+                </a></Link>
               </li>
               <li className="nav-item">
+                <Link to="/products">
                 <a className="nav-link" >
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Products
-                </a>
+                </a></Link>
               </li>
               <li className="nav-item active">
-                <a className="nav-link" >
+                <Link to="/cart"><a className="nav-link" >
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cart
-                </a>
+                </a></Link>
               </li>
               <li className="nav-item">
+                    <Link to="/">
                 <a className="nav-link" >
                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact
-                </a>
+                </a></Link>
               </li>
             </ul>
 
             <form className="form-inline my-2 my-lg-0">
-            
+              <Link to="./cart">
               <a className="btn btn-success btn-sm ml-3" >
                 <i className="fa fa-shopping-cart"></i> Cart &nbsp;&nbsp;
                 <span className="badge badge-light">3</span>
-              </a>
+              </a></Link>
             </form>
           </div>
         </div>
