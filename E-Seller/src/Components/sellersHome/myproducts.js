@@ -137,7 +137,7 @@ export const MyProducts = () => {
                         <div>
                           <Link
                             to={{
-                              pathname: "/productdetail",
+                              pathname: "/sellersproductdetail",
                               state: product,
                             }}
                             style={{ textDecoration: "none" }}

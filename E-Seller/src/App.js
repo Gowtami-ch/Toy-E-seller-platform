@@ -13,6 +13,7 @@ import { Filterbar } from "./Components/Filterbar/Filterbar";
 import { Sellers } from "./Components/sellersHome/Sellers";
 import { Sellnewproduct } from "./Components/sellersHome/sellnewproduct";
 import { MyProducts } from "./Components/sellersHome/myproducts";
+import { Sellersproductdetail } from "./Components/sellersHome/sellerproductdetail";
 function App() {
   return (
     <div className="App">
@@ -53,6 +54,9 @@ function App() {
           </Route>
            <Route exact path="/myproducts">
             <MyProducts />
+          </Route>
+           <Route exact path="/sellersproductdetail">
+            <Sellersproductdetail />
           </Route>
         </Switch>
       </Router>
