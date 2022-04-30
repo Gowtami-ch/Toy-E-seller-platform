@@ -15,7 +15,7 @@ import {
 } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import styles from "./productstyles.module.css";
-import { products } from "../Products";
+import { Sellerproducts } from "../Sellerproducts";
 import ReactPaginate from "react-paginate";
 function Productrating(props) {
   const rating = props.rating;
@@ -82,7 +82,7 @@ function Productrating(props) {
   }
 }
 export const MyProducts = () => {
-  const pageCount=products.length/12;
+  const pageCount=Sellerproducts.length/12;
   const handlePageClick = () =>
   {
     //  setCurrPage(currPage+1);
@@ -131,7 +131,7 @@ export const MyProducts = () => {
             <main className={styles.content}>
               <div className={styles.toolbar} />
               <Grid container justify="center" spacing={3}>
-                {products.map((product) => (
+                {Sellerproducts.map((product) => (
                   <Grid key={product.id} item xs={12} sm={6} md={4} lg={3}>
                     <div>
                       <Link
