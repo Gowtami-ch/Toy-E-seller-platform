@@ -10,6 +10,8 @@ import { Tracking } from "./Components/Tracking/Tracking";
 import { Payment } from "./Components/Payments/Payment";
 import { Profile } from "./Components/Profile/Profile";
 import { Filterbar } from "./Components/Filterbar/Filterbar";
+import { Sellers } from "./Components/sellersHome/Sellers";
+ 
 function App() {
   return (
     <div className="App">
@@ -27,9 +29,9 @@ function App() {
           <Route exact path="/cart">
             <Cart />
           </Route>
-          <Route exact path="/productdetail">
+          {/* <Route exact path="/productdetail">
             <Productdetail />
-          </Route>
+          </Route> */}
           <Route exact path="/tracking">
             <Tracking />
           </Route>
@@ -39,8 +41,11 @@ function App() {
           <Route exact path="/profile">
             <Profile />
           </Route>
-          <Route exact path="/filter">
+          {/* <Route exact path="/filter">
             <Filterbar />
+          </Route> */}
+          <Route exact path="/sellers">
+            <Sellers />
           </Route>
         </Switch>
       </Router>
