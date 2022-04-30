@@ -6,7 +6,8 @@
   /* display: flex; */
   /* align-items: center; */
   text-align: center;
-  
+  /* justify-content: center; */
+  /* place-items: center; */
   width: 100%;
   overflow: hidden;
   font-family: "Poppins";
@@ -96,8 +97,7 @@
   left: 0;
 }
 
-.btn 
-{
+.btn {
   color: #fff;
   background: linear-gradient(135deg, #852d91, #312a6c);
   font-family: "Comfortaa", cursive;
@@ -215,7 +215,8 @@
 @media screen and (max-width: 850px) {
   .imageArea {
     display: block;
-   
+    /* width: 100%; */
+    /* height: 50vh; */
   }
 
   .imageArea div {

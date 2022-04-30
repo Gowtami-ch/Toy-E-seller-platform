@@ -1,0 +1,89 @@
+.root
+{
+    max-width: 100%;
+}
+.media
+{
+    height: 0;
+    padding-top:56.25% ;
+}
+.cardActions 
+{
+    display: flex;
+    justify-content: flex-end;
+}
+.cardContent
+{
+    display: flex;
+    justify-content: space-between;
+}
+.content
+{
+  flex-grow: 1;
+  background-color:white ;
+  padding: 100px;
+  margin: auto;
+}
+
+.button {
+  font-size: 1.6rem;
+}
+.full-width {
+  width: 100%;
+}
+
+
+.li
+{
+   display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.licard
+{
+   display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 32rem;
+  padding: 2rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+  list-style-type: none;
+}
+.input
+{
+    padding: 1rem;
+  border: 0.1rem #c0c0c0 solid;
+  border-radius: 0.5rem;
+}
+.colflex
+{
+  display: flex;
+  flex-direction: column;
+}
+.rowflex
+{
+  display: flex;
+  flex-direction: row;
+}
+.checked 
+{
+  color: orange;
+}
+.reviewer
+{
+  font-size: 13px;
+  color: #10085a;
+}

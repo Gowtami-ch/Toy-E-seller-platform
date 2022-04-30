@@ -23,6 +23,7 @@
 }
 .remove_underline {
   text-decoration: none;
+  color: black;
 }
 .whiteHeader {
   position: sticky;
