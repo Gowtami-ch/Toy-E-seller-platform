@@ -2,7 +2,7 @@ import React, { createRef } from "react";
 import { useState } from "react";
 import createStyles from "./newproduct.module.css";
 import { Header } from "../Header/Header";
-import {Footer} from "../Header/Footer"
+import { Footer } from "../Header/Footer";
 import imgDef from "../../Assets/user.png";
 
 export const Sellnewproduct = ({ _id }) => {
@@ -99,14 +99,14 @@ export const Sellnewproduct = ({ _id }) => {
             <label htmlFor="" className={createStyles.clabel}>
               Price(in Rupees)
             </label>
-                <input
+            <input
               type="text"
               pattern="[0-9]*"
               name={`discounts`}
               placeholder={`eg: 1200`}
               className={createStyles.cinput}
             />
-          
+
             <br />
             <br />
             <label htmlFor="platforms" className={createStyles.clabel}>
@@ -139,7 +139,7 @@ export const Sellnewproduct = ({ _id }) => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

@@ -1,13 +1,13 @@
 import React from "react";
 // import { Header } from "./Header";
 import { Header } from "../Header/Header";
-import {Footer} from "../Header/Footer"
+import { Footer } from "../Header/Footer";
 import styles from "./sellershome.module.css";
 import Sellershome from "./Sellershome";
 export const Sellers = () => {
   return (
     <>
-       <Header /> 
+      <Header />
       <div className="container-fluid">
         <div className="row flex-nowrap">
           {/* <Navbar /> */}
@@ -16,7 +16,7 @@ export const Sellers = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

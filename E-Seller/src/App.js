@@ -12,6 +12,7 @@ import { Profile } from "./Components/Profile/Profile";
 import { Filterbar } from "./Components/Filterbar/Filterbar";
 import { Sellers } from "./Components/sellersHome/Sellers";
 import { Sellnewproduct } from "./Components/sellersHome/sellnewproduct";
+import { MyProducts } from "./Components/sellersHome/myproducts";
 function App() {
   return (
     <div className="App">
@@ -29,9 +30,9 @@ function App() {
           <Route exact path="/cart">
             <Cart />
           </Route>
-          {/* <Route exact path="/productdetail">
+          <Route exact path="/productdetail">
             <Productdetail />
-          </Route> */}
+          </Route>
           <Route exact path="/tracking">
             <Tracking />
           </Route>
@@ -49,6 +50,9 @@ function App() {
           </Route>
            <Route exact path="/sellnewproduct">
             <Sellnewproduct />
+          </Route>
+           <Route exact path="/myproducts">
+            <MyProducts />
           </Route>
         </Switch>
       </Router>

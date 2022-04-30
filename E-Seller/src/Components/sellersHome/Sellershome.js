@@ -11,8 +11,6 @@ export const Sellershome = () => {
           <section className={`${styles.OblurImage}`}>
             <div className={styles.img}>
               <img src={image} alt="home" />
-             
-              
             </div>
           </section>
           <section className={`${styles.mdbCustom}`}>
@@ -24,7 +22,7 @@ export const Sellershome = () => {
               cardDesc={``}
             />
             <Card
-              path="/Myproducts"
+              path="/myproducts"
               imgSrc="https://images.yourstory.com/cs/wordpress/2016/08/125-fall-in-love.png?w=1200"
               alt={"..."}
               cardName={`My Products`}
