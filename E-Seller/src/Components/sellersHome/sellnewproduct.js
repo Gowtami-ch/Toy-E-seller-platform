@@ -34,7 +34,7 @@ export const Sellnewproduct = ({ _id }) => {
           <div className={createStyles.container}>
             <br />
             <br />
-            <div className={createStyles.brandtitle}>Create Event</div>
+            <div className={createStyles.brandtitle}>Add product</div>
             <div className={createStyles.inputs}></div>
             <section className={`${createStyles.imageArea}`}>
               <div>
@@ -143,4 +143,3 @@ export const Sellnewproduct = ({ _id }) => {
     </>
   );
 };
-export default Sellnewproduct;

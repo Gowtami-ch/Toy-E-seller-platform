@@ -11,7 +11,7 @@ import { Payment } from "./Components/Payments/Payment";
 import { Profile } from "./Components/Profile/Profile";
 import { Filterbar } from "./Components/Filterbar/Filterbar";
 import { Sellers } from "./Components/sellersHome/Sellers";
- 
+import { Sellnewproduct } from "./Components/sellersHome/sellnewproduct";
 function App() {
   return (
     <div className="App">
@@ -46,6 +46,9 @@ function App() {
           </Route> */}
           <Route exact path="/sellers">
             <Sellers />
+          </Route>
+           <Route exact path="/sellnewproduct">
+            <Sellnewproduct />
           </Route>
         </Switch>
       </Router>
