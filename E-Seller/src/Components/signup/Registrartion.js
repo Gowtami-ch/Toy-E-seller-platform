@@ -143,7 +143,7 @@ export const Register = ({ setToken, setRole }) => {
                     name="psw"
                     placeholder="Password"
                     className="form-control"
-                    value={password}
+                    //value={password}
                     onChange={handleChange}
                   />{" "}
                 </div>
